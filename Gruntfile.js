@@ -74,8 +74,7 @@ module.exports = function (grunt) {
         files: {
           'dist/dash-spinner.min.js': [
             '.tmp/scripts/namespace.js',
-            '.tmp/scripts/dash-spinner/templates.js',
-            '.tmp/scripts/dash-spinner/view.js'
+            '.tmp/scripts/dash-spinner/**/*.js'
           ]
         }
       }

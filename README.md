@@ -15,25 +15,6 @@ Run `testem`
 
 # Usage
 
-The minified JavaScript file can be found in `dist/`. There is also a sample application that allows you to start and stop a spinner.
-
-### Example Spinner
-
-```CoffeeScript
-spinner = new DashSpinner.Spinner
-  target: $("#element_to_contain_spinner")
-spinner.spin()
-spinner.stop()
-```
-
-### Example Dash Spinner
-
-```CoffeeScript
-spinner = new DashSpinner.Spinner
-  target: $("#element_to_contain_spinner")
-  spinnerConfiguration: DashSpinner.Configuration.large
-spinner.spin()
-spinner.stop()
-```
+Please refer to our [documentation](http://developers.samaritanministries.org/developers/dash-spinner.js/) site
 
 MIT License

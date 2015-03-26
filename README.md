@@ -1,4 +1,5 @@
 # Dash Spinner
+[![Build Status](https://travis-ci.org/samaritanministries/dash-spinner.js.svg?branch=master)](https://travis-ci.org/samaritanministries/dash-spinner.js)
 
 This is a JavaScript library that provides a thin wrapper around the Spin.js library. It also provides default configuration for the Dash platform.
 

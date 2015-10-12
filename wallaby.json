@@ -1,0 +1,19 @@
+{
+  "files": [
+    "scripts/bower_components/jquery/dist/jquery.js",
+    "scripts/bower_components/underscore/underscore.js",
+    "scripts/bower_components/backbone/backbone.js",
+    "scripts/bower_components/jasmine-jquery/lib/jasmine-jquery.js",
+    "scripts/bower_components/spin.js/spin.js",
+    "scripts/namespace.js",
+    ".tmp/scripts/dash-spinner/configuration.js",
+    ".tmp/scripts/dash-spinner/spinner.js",
+    ".tmp/scripts/sample_app/spinner_controls_view.js",
+    "spec/mocks/spinner.coffee"
+  ],
+
+  "tests": [
+    "spec/*.coffee",
+    "spec/dash-spinner/*.coffee"
+  ]
+}

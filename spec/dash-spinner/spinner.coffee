@@ -24,7 +24,7 @@ describe "DashSpinner.Spinner", ->
 
       spinner.spin()
 
-      expect(@target.text()).toContain(mockSpinner.renderedContent)
+      expect(@target.html()).toContain(mockSpinner.renderedContent)
 
     it "is spinning", ->
       spinner = buildSpinner(target: @target)
@@ -72,3 +72,22 @@ describe "DashSpinner.Spinner", ->
       spinner.stop()
 
       expect(spinner.isSpinning()).toBeFalsy()
+
+    it "removes transparent style from the target", ->
+      setFixtures('<style>button{color:rgb(51, 51, 51);}</style><button>Original Content</button>')
+      button = $("button")
+      spinner = buildSpinner
+        target: button
+      spinner.spin()
+      spinner.stop()
+      expect(button.css("color")).toBe("rgb(51, 51, 51)")
+
+    it "removes spinner element from the target", ->
+      mockSpinner = new Mocks.Spinner()
+      spyOn(window, "Spinner").and.returnValue(mockSpinner)
+
+      spinner = buildSpinner(target: @target)
+
+      spinner.spin()
+      spinner.stop()
+      expect(@target.html()).not.toContain(mockSpinner.renderedContent)

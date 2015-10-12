@@ -1,55 +1,74 @@
 describe "DashSpinner.Spinner", ->
 
   beforeEach ->
-    setFixtures('<div data-id="spin-target">Original Content</div>')
+    setFixtures('<div data-id="spin-target" style="color:rgb(0, 0, 0);">Original Content</div>')
     @target = $("[data-id=spin-target]")
 
-  spinner = (options) ->
-    _spinner = new DashSpinner.Spinner
+  buildSpinner = (options) ->
+    new DashSpinner.Spinner
       target: options.target
       spinnerConfiguration: options.spinnerConfiguration
 
   describe "Starting the spinner", ->
 
     it "starts not spinning", ->
-      _spinner = spinner(target: @target)
+      spinner = buildSpinner(target: @target)
 
-      expect(_spinner.isSpinning()).toBeFalsy()
+      expect(spinner.isSpinning()).toBeFalsy()
 
     it "starts the spinner", ->
       mockSpinner = new Mocks.Spinner()
       spyOn(window, "Spinner").and.returnValue(mockSpinner)
 
-      _spinner = spinner(target: @target)
+      spinner = buildSpinner(target: @target)
 
-      _spinner.spin()
+      spinner.spin()
 
-      expect(@target.text()).toEqual(mockSpinner.renderedContent)
+      expect(@target.text()).toContain(mockSpinner.renderedContent)
 
     it "is spinning", ->
-      _spinner = spinner(target: @target)
+      spinner = buildSpinner(target: @target)
 
-      _spinner.spin()
+      spinner.spin()
 
-      expect(_spinner.isSpinning()).toBeTruthy()
+      expect(spinner.isSpinning()).toBeTruthy()
 
     it "initializes the spinner with the given configuration", ->
       sampleConfiguration = foo: "bar"
 
       createSpinnerSpy = spyOn(window, "Spinner")
 
-      _spinner = spinner
+      spinner = buildSpinner
         spinnerConfiguration: sampleConfiguration
 
       expect(createSpinnerSpy).toHaveBeenCalledWith(sampleConfiguration)
 
+    it "does not clear the original contents", ->
+      spinner = new DashSpinner.Spinner
+        target: @target
+      spinner.spin()
+      expect(@target.text()).toContain("Original Content")
+
+    it "sets the color of the object to transparent for buttons and input[type=button]'s", ->
+      setFixtures('<button style="color:rgba(10, 33, 100, .5);">Original Content</button>')
+      button = $("button")
+      spinner = buildSpinner
+        target: button
+      spinner.spin()
+      expect(button.css("color")).toBe("rgba(0, 0, 0, 0)")
+
+    it "does not modify the color for objects that aren't buttons", ->
+      spinner = buildSpinner
+        target: @target
+      spinner.spin()
+      expect(@target.css("color")).toBe("rgb(0, 0, 0)")
 
   describe "Stopping the spinner", ->
 
     it "stops spinning", ->
-      _spinner = spinner(target: @target)
+      spinner = buildSpinner(target: @target)
 
-      _spinner.spin()
-      _spinner.stop()
+      spinner.spin()
+      spinner.stop()
 
-      expect(_spinner.isSpinning()).toBeFalsy()
+      expect(spinner.isSpinning()).toBeFalsy()

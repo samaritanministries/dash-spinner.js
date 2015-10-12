@@ -11,7 +11,9 @@ class DashSpinner.Spinner
 
   spin: () ->
     @spinner.spin()
-    @target.html(@spinner.el)
+    if @target.is("button, input[type=button]")
+      @target.css("color", "transparent")
+    @target.append(@spinner.el)
 
   stop: ->
     @target.html("")

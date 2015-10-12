@@ -26,7 +26,7 @@ DashSpinner.Configuration.large =
   corners: 1,
   rotate: 0,
   direction: 1,
-  color: '#fff',
+  color: '#333',
   speed: 1.5,
   trail: 71,
   shadow: false,

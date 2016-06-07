@@ -1,4 +1,4 @@
-$spinner-color: #000;
+$spinner-color: #000 !default;
 
 .spinner {
   animation: rotation 1200ms infinite cubic-bezier(0.74, 0, 0.38, 1);

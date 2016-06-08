@@ -1,20 +1,63 @@
 # Dash Spinner
 [![Build Status](https://travis-ci.org/samaritanministries/dash-spinner.js.svg?branch=master)](https://travis-ci.org/samaritanministries/dash-spinner.js)
+[![Dash-Spinner Version](https://img.shields.io/badge/Version-0.2.1-green.svg)]()
 
 This is a JavaScript library that provides a thin wrapper around the Spin.js library. It also provides default configuration for the Dash platform.
 
-# Setup
+## Browser Support
 
-* install node/npm
-* npm install
-* bower install
-* npm install testem -g
+| Chrome | Edge | Firefox | Opera | IE | Safari |
+|--------|------|---------|-------|----|--------|
+| Latest | Latest | Latest | Latest | IE 11+ | Safari 8+ |
 
-# Tests
+## Getting Started
+
+### Install the Component
+
+Dash-Spinner.js is delivered as a [bower](bower.io) component.
+
+1. Install bower
+  ```grunt
+  npm install -g bower
+  ```
+
+  >Note: Bower requires node, npm and git.
+
+2. Create a `bower.json` file
+  ```grunt
+  bower init
+  ```
+
+3. Install the dashing bower component and save it to your `bower.json` file
+  ```grunt
+  bower install dash-spinner.js --save
+  ```
+
+### Including SASS in your project
+
+Include component styles in your main application SASS file.
+
+```scss
+@import "bower_components/dash-spinner.js/styles/dash-spinner";
+```
+>Note: Depending on your bower configuration, this file path may be different
+
+## Contribution
+
+Feel free to add to this component and make it better. We're always looking for improvements.
+
+### Setup
+
+* `install node/npm`
+* `npm install`
+* `bower install`
+* `npm install testem -g`
+
+### Tests
 
 Run `testem`
 
-# Usage
+### Usage
 
 Please refer to our [documentation](http://developers.samaritanministries.org/developers/dash-spinner.js/) site
 

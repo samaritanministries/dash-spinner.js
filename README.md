@@ -42,6 +42,15 @@ Include component styles in your main application SASS file.
 ```
 >Note: Depending on your bower configuration, this file path may be different
 
+Once installed, configure the spinner color by setting the SASS variable `$spinner-color` to a valid CSS color. Be sure to configure the spinner color before the import of the dash-spinner.js styles.
+
+Example configuration:
+
+```scss
+$spinner-color: #2DB16C;
+@import "bower_components/dash-spinner.js/styles/dash-spinner";
+```
+
 #### Including JavaScript in your project 
 
 Please refer to our [documentation site](http://developers.samaritanministries.org/developers/dash-spinner.js/) for details on component configuration.

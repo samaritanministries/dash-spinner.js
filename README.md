@@ -17,23 +17,23 @@ This is a JavaScript library that provides a thin wrapper around the Spin.js lib
 Dash-Spinner.js is delivered as a [bower](bower.io) component.
 
 1. Install bower
-  ```grunt
+  ```bash
   npm install -g bower
   ```
 
   >Note: Bower requires node, npm and git.
 
 2. Create a `bower.json` file
-  ```grunt
+  ```bash
   bower init
   ```
 
-3. Install the dashing bower component and save it to your `bower.json` file
-  ```grunt
+3. Install the dash-spinner.js bower component and save it to your `bower.json` file
+  ```bash
   bower install dash-spinner.js --save
   ```
 
-### Including SASS in your project
+#### Including SASS in your project
 
 Include component styles in your main application SASS file.
 
@@ -42,23 +42,44 @@ Include component styles in your main application SASS file.
 ```
 >Note: Depending on your bower configuration, this file path may be different
 
+#### Including JavaScript in your project 
+
+Please refer to our [documentation site](http://developers.samaritanministries.org/developers/dash-spinner.js/) for details on component configuration.
+
+
 ## Contribution
 
 Feel free to add to this component and make it better. We're always looking for improvements.
 
 ### Setup
 
-* `install node/npm`
-* `npm install`
-* `bower install`
-* `npm install testem -g`
+1. Install node.js and NPM
+
+  ```bash
+  install node/npm
+  ```
+2. Install NPM components
+  
+  ```bash
+  npm install
+  ```
+3. Install bower components
+
+  ```bash
+  bower install
+  ```
+4. Install global NPM components
+  
+  ```bash
+  npm install testem -g
+  ```
 
 ### Tests
 
-Run `testem`
+Make sure that you have testem installed globally. When you're ready to run tests, open up your project and run:
 
-### Usage
-
-Please refer to our [documentation](http://developers.samaritanministries.org/developers/dash-spinner.js/) site
+```bash
+testem
+```
 
 MIT License

@@ -1,10 +1,10 @@
 $spinner-color: #000 !default;
 
 .spinner {
-  animation: rotation 1200ms infinite cubic-bezier(0.74, 0, 0.38, 1);
-  -o-animation: rotation 1200ms infinite cubic-bezier(0.74, 0, 0.38, 1);
-  -moz-animation: rotation 1200ms infinite cubic-bezier(0.74, 0, 0.38, 1);
-  -webkit-animation: rotation 1200ms infinite cubic-bezier(0.74, 0, 0.38, 1);
+  animation: rotation 1250ms infinite cubic-bezier(0.75, 0.28, 0.44, 0.82);
+  -o-animation: rotation 1250ms infinite cubic-bezier(0.75, 0.28, 0.44, 0.82);
+  -moz-animation: rotation 1250ms infinite cubic-bezier(0.75, 0.28, 0.44, 0.82);
+  -webkit-animation: rotation 1250ms infinite cubic-bezier(0.75, 0.28, 0.44, 0.82);
 
   position: relative;
   border-radius: 100%;

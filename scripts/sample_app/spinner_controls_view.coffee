@@ -3,14 +3,25 @@ namespace("SampleApp")
 class SampleApp.SpinnerControlsView extends Backbone.View
 
   events:
-    "click [data-id=start]" : "startSpinner"
-    "click [data-id=stop]" : "stopSpinner"
+    "click [data-action=start]" : "startSpinner"
+    "click [data-action=stop]" : "stopSpinner"
+    "click [data-action=start-button-spinner]" : "startButtonSpinner"
+    "click [data-action=stop-button-spinner]" : "stopButtonSpinner"
 
   render: ->
-    @$el.html('<div data-id="start">Start</div><div data-id="stop">Stop</div>')
+    start = $("<div data-action=\"start\">Start</div>")
+    stop = $("<div data-action=\"stop\">Stop</div>")
+    startButton = $("<div data-action=\"start-button-spinner\">Start Button</div>")
+    stopButton = $("<div data-action=\"stop-button-spinner\">Stop Button</div>")
+    @$el.append(start)
+      .append(stop)
+      .append(startButton)
+      .append(stopButton)
     @
 
   initialize: (@options) ->
+    @buttonSpinner = new DashSpinner.Spinner
+      target: @options.buttonSpinnerTarget
     @spinner = new DashSpinner.Spinner
       target: @options.spinnerTarget
       spinnerConfiguration: @options.spinnerConfiguration
@@ -20,3 +31,9 @@ class SampleApp.SpinnerControlsView extends Backbone.View
 
   stopSpinner: ->
     @spinner.stop()
+
+  startButtonSpinner: ->
+    @buttonSpinner.spin()
+
+  stopButtonSpinner: ->
+    @buttonSpinner.stop()

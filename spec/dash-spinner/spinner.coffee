@@ -1,93 +1,95 @@
 describe "DashSpinner.Spinner", ->
 
   beforeEach ->
-    fixtures = setFixtures('<div data-id="spin-target" style="color:rgb(0, 0, 0);">Original Content</div>')
-    @target = fixtures.find("[data-id=spin-target]")
+    @target = $("<div></div>")
 
   buildSpinner = (options) ->
     new DashSpinner.Spinner
       target: options.target
       spinnerConfiguration: options.spinnerConfiguration
 
-  describe "Starting the spinner", ->
+  describe "The initial state of the state", ->
 
-    it "starts not spinning", ->
+    it "is not spinning", ->
       spinner = buildSpinner(target: @target)
 
-      expect(spinner.isSpinning()).toBeFalsy()
+      expect(spinner.isSpinning()).toBe(false)
 
-    it "starts the spinner", ->
-      mockSpinner = new Mocks.Spinner()
-      spyOn(window, "Spinner").and.returnValue(mockSpinner)
+  describe "Starting the spinner", ->
 
+    it "adds a class to the given target", ->
       spinner = buildSpinner(target: @target)
 
       spinner.spin()
 
-      expect(@target.html()).toContain(mockSpinner.renderedContent)
+      expect(@target).toHaveClass("dash-spinner")
+
+    it "adds the spinner size", ->
+      spinner = buildSpinner
+        spinnerConfiguration:
+          className: "some-size"
+        target: @target
+
+      spinner.spin()
+
+      expect(@target).toHaveClass("some-size")
 
     it "is spinning", ->
       spinner = buildSpinner(target: @target)
 
       spinner.spin()
 
-      expect(spinner.isSpinning()).toBeTruthy()
+      expect(spinner.isSpinning()).toBe(true)
 
-    it "initializes the spinner with the given configuration", ->
-      sampleConfiguration = foo: "bar"
+    it "uses a different class for buttons", ->
+      button = $("<button>")
+      spinner = buildSpinner(target: button)
 
-      createSpinnerSpy = spyOn(window, "Spinner")
-
-      spinner = buildSpinner
-        spinnerConfiguration: sampleConfiguration
-
-      expect(createSpinnerSpy).toHaveBeenCalledWith(sampleConfiguration)
-
-    it "does not clear the original contents", ->
-      spinner = new DashSpinner.Spinner
-        target: @target
       spinner.spin()
-      expect(@target.text()).toContain("Original Content")
 
-    it "sets the color of the object to transparent for buttons and input[type=button]'s", ->
-      setFixtures('<button style="color:rgba(10, 33, 100, .5);">Original Content</button>')
-      button = $("button")
-      spinner = buildSpinner
-        target: button
-      spinner.spin()
-      expect(button.css("color")).toBe("rgba(0, 0, 0, 0)")
+      expect(button).toHaveClass("has-spinner")
+      expect(spinner.isSpinning()).toBe(true)
 
-    it "does not modify the color for objects that aren't buttons", ->
-      spinner = buildSpinner
-        target: @target
+    it "uses a different class for input[type=button]s", ->
+      button = $("<input type=button>")
+      spinner = buildSpinner(target: button)
+
       spinner.spin()
-      expect(@target.css("color")).toBe("rgb(0, 0, 0)")
+
+      expect(button).toHaveClass("has-spinner")
+      expect(spinner.isSpinning()).toBe(true)
 
   describe "Stopping the spinner", ->
 
     it "stops spinning", ->
-      spinner = buildSpinner(target: @target)
+      spinner = buildSpinner(target: @target).spin()
 
-      spinner.spin()
       spinner.stop()
 
-      expect(spinner.isSpinning()).toBeFalsy()
+      expect(spinner.isSpinning()).toBe(false)
 
-    it "removes transparent style from the target", ->
-      setFixtures('<style>button{color:rgb(51, 51, 51);}</style><button>Original Content</button>')
-      button = $("button")
+    it "stops spinning - button", ->
+      spinner = buildSpinner(target: $("<button>")).spin()
+
+      spinner.stop()
+
+      expect(spinner.isSpinning()).toBe(false)
+
+    it "removes the spinner size", ->
       spinner = buildSpinner
-        target: button
+        spinnerConfiguration:
+          className: "some-size"
+        target: @target
       spinner.spin()
+
       spinner.stop()
-      expect(button.css("color")).toBe("rgb(51, 51, 51)")
 
-    it "removes spinner element from the target", ->
-      mockSpinner = new Mocks.Spinner()
-      spyOn(window, "Spinner").and.returnValue(mockSpinner)
+      expect(@target).not.toHaveClass("some-size")
 
-      spinner = buildSpinner(target: @target)
+    it "does not remove preexisting classes when no class name is given", ->
+      @target.addClass("my-original-class")
+      spinner = buildSpinner(target: @target).spin()
 
-      spinner.spin()
       spinner.stop()
-      expect(@target.html()).not.toContain(mockSpinner.renderedContent)
+
+      expect(@target).toHaveClass("my-original-class")

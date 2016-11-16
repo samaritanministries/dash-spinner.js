@@ -3,22 +3,28 @@ namespace("DashSpinner")
 class DashSpinner.Spinner
 
   constructor: (options) ->
+    @configuration = options.spinnerConfiguration
     @target = options.target
-    @spinner = new window.Spinner(options.spinnerConfiguration)
 
   isSpinning: ->
-    @target.children().length > 0
+    @target.hasClass("dash-spinner") || @target.hasClass("has-spinner")
 
-  spin: () ->
-    @spinner.spin()
+  spin: ->
+    @target.addClass(@className())
     if @isButton()
-      @target.css("color", "transparent")
-    @target.append(@spinner.el)
+      @target.addClass("has-spinner")
+    else
+      @target.addClass("dash-spinner")
+    @
+
+  stop: ->
+    @target.removeClass(@className())
+      .removeClass("dash-spinner")
+      .removeClass("has-spinner")
+    @
 
   isButton: ->
     @target.is("button, input[type=button]")
 
-  stop: ->
-    if @isButton()
-      @target.css("color", "")
-    @target.find(".spinner").remove()
+  className: ->
+    @configuration?.className

@@ -1,8 +1,8 @@
 describe "DashSpinner.Spinner", ->
 
   beforeEach ->
-    setFixtures('<div data-id="spin-target" style="color:rgb(0, 0, 0);">Original Content</div>')
-    @target = $("[data-id=spin-target]")
+    fixtures = setFixtures('<div data-id="spin-target" style="color:rgb(0, 0, 0);">Original Content</div>')
+    @target = fixtures.find("[data-id=spin-target]")
 
   buildSpinner = (options) ->
     new DashSpinner.Spinner

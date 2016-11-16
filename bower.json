@@ -1,15 +1,17 @@
 {
   "name": "dash-spinner.js",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "dependencies": {},
   "devDependencies": {
-    "backbone" :      "~1.2.3",
-    "jasmine-jquery": "~2.1.0",
-    "spin.js": "~2.0.0"
+    "backbone": "~1.2.3",
+    "dashing": "^1.0.12",
+    "jasmine-jquery": "~2.1.0"
   },
-  "authors": ["smi <smi@8thlight.com>"],
+  "authors": [
+    "smi <smi@8thlight.com>"
+  ],
   "description": "A collection of spinners for Dash",
-  "main": ["dist/dash-spinner.min.js", "dist/dash-spinner.css"],
+  "main": [],
   "keywords": [
     "dash",
     "spinner"

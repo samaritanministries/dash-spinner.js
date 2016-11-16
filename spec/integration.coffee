@@ -1,13 +1,10 @@
 describe "Showing the spinner", ->
 
   it "starts and stops a spinner", ->
-    setFixtures('<div data-id="spinner-controls"></div><div data-id="spinner-target"></div>')
     spinnerControls = new SampleApp.SpinnerControlsView
-      spinnerTarget: $("[data-id=spinner-target]")
+      spinnerTarget: $("<div>")
     spinner = spinnerControls.spinner
     spinnerControls.render()
-
-    $("[data-id=spinner-controls]").html(spinnerControls.el)
 
     expect(spinner.isSpinning()).toBeFalsy()
 
@@ -16,5 +13,21 @@ describe "Showing the spinner", ->
     expect(spinner.isSpinning()).toBeTruthy()
 
     spinnerControls.stopSpinner()
+
+    expect(spinner.isSpinning()).toBeFalsy()
+
+  it "starts and stops a spinner on a button", ->
+    spinnerControls = new SampleApp.SpinnerControlsView
+      buttonSpinnerTarget: $("<button>")
+    spinner = spinnerControls.buttonSpinner
+    spinnerControls.render()
+
+    expect(spinner.isSpinning()).toBeFalsy()
+
+    spinnerControls.$("[data-action=start-button-spinner]").click()
+
+    expect(spinner.isSpinning()).toBeTruthy()
+
+    spinnerControls.$("[data-action=stop-button-spinner]").click()
 
     expect(spinner.isSpinning()).toBeFalsy()

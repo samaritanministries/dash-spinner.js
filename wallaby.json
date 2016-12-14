@@ -1,9 +1,9 @@
 {
   "files": [
-    "scripts/bower_components/jquery/dist/jquery.js",
-    "scripts/bower_components/underscore/underscore.js",
-    "scripts/bower_components/backbone/backbone.js",
-    "scripts/bower_components/jasmine-jquery/lib/jasmine-jquery.js",
+    "bower_components/jquery/dist/jquery.js",
+    "bower_components/underscore/underscore.js",
+    "bower_components/backbone/backbone.js",
+    "bower_components/jasmine-jquery/lib/jasmine-jquery.js",
     "scripts/namespace.js",
     "scripts/dash-spinner/configuration.coffee",
     "scripts/dash-spinner/spinner.coffee",

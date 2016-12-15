@@ -22,8 +22,11 @@ module.exports = {
         loader: "babel-loader",
         test: /\.js$/
       }, {
-        include: path.join(PROJECT_ROOT, "scripts"),
-        loader: "coffee",
+        include: [
+          path.join(PROJECT_ROOT, "scripts"),
+          path.join(PROJECT_ROOT, "spec")
+        ],
+        loader: "babel!coffee",
         test: /\.coffee$/
       }
     ]

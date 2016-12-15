@@ -21,10 +21,17 @@
     "grunt-contrib-jst": "~0.6.0",
     "grunt-contrib-uglify": "~0.2.0",
     "grunt-sass": "~1.1.0",
+    "jasmine-core": "^2.5.2",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-spec-reporter": "0.0.26",
+    "karma-webpack": "^1.8.0",
     "load-grunt-tasks": "~0.1.0",
     "phantomjs": "~1.9.16"
   },
   "scripts": {
-    "webpack": "webpack --config webpack.config.js"
+    "webpack": "webpack --config webpack.config.js",
+    "karma": "karma start karma.config.js",
+    "test": "karma start karma.config.js --single-run=true"
   }
 }

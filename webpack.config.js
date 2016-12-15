@@ -4,19 +4,22 @@ var path = require("path")
 const PROJECT_ROOT = path.resolve(__dirname)
 
 module.exports = {
-  entry: [
-    "./bower_components/jquery/dist/jquery.js",
-    "./bower_components/underscore/underscore.js",
-    "./bower_components/backbone/backbone.js",
-    "./scripts/namespace.js",
-    "./scripts/dash-spinner/configuration.coffee",
-    "./scripts/dash-spinner/spinner.coffee",
-    "./scripts/sample_app/spinner_controls_view.coffee",
-    "./scripts/sample_app/main.coffee"
-  ],
+  entry: {
+    "dist/dash-spinner.js": [
+      "./bower_components/jquery/dist/jquery.js",
+      "./bower_components/underscore/underscore.js",
+      "./bower_components/backbone/backbone.js",
+      "./scripts/namespace.js",
+      "./scripts/dash-spinner/configuration.coffee",
+      "./scripts/dash-spinner/spinner.coffee"
+    ],
+    ".tmp/sample_app.js": [
+      "./scripts/sample_app/spinner_controls_view.coffee",
+      "./scripts/sample_app/main.coffee"
+    ]
+  },
   output: {
-    path: "./dist",
-    filename: "new-spinner.js"
+    filename: "[name]"
   },
   module: {
     loaders:[

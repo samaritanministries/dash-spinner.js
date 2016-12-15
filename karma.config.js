@@ -6,7 +6,15 @@ module.exports = function (config) {
   config.set({
     frameworks: [ "jasmine" ],
     files: [
-      "spec/**/*_spec.coffee"
+      "bower_components/jquery/dist/jquery.js",
+      "bower_components/underscore/underscore.js",
+      "bower_components/backbone/backbone.js",
+      "bower_components/jasmine-jquery/lib/jasmine-jquery.js",
+      "scripts/namespace.js",
+      "scripts/dash-spinner/configuration.coffee",
+      "scripts/dash-spinner/spinner.coffee",
+      "scripts/sample_app/spinner_controls_view.coffee",
+      "spec/**/*.coffee"
     ],
     plugins: [
       "karma-jasmine",

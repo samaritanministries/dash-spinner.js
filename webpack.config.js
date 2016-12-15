@@ -1,9 +1,11 @@
+var webpack = require("webpack");
 var path = require("path")
 
 const PROJECT_ROOT = path.resolve(__dirname)
 
 module.exports = {
   entry: [
+    "./bower_components/underscore/underscore.js",
     "./scripts/dash-spinner/bar.js",
     "./scripts/dash-spinner/foo.js",
     "./scripts/dash-spinner/foo.coffee"
@@ -31,6 +33,11 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new webpack.ResolverPlugin(
+      new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])
+    )
+  ],
   resolve: {
     alias: {
       "dash_spinner": path.join(PROJECT_ROOT, "scripts", "dash-spinner")

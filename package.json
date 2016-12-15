@@ -5,22 +5,29 @@
     "type": "git",
     "url": "git://git@github.com:samaritanministries/dash-spinner.js.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "webpack": "^1.14.0"
+  },
   "devDependencies": {
-    "grunt":                "~0.4.1",
-    "grunt-contrib-clean":  "~0.6.0",
+    "babel-core": "^6.20.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015-nostrict": "^6.6.2",
+    "coffee-loader": "^0.7.2",
+    "coffee-script": "^1.12.1",
+    "grunt": "~0.4.1",
+    "grunt-contrib-clean": "~0.6.0",
     "grunt-contrib-coffee": "~0.13.0",
-    "grunt-contrib-coffee": "~0.13.0",
-    "grunt-contrib-copy":   "~0.5.0",
-    "grunt-contrib-jst":    "~0.6.0",
-    "grunt-sass":           "~1.1.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-jst": "~0.6.0",
     "grunt-contrib-uglify": "~0.2.0",
-    "load-grunt-tasks":     "~0.1.0",
-    "phantomjs":            "~1.9.16",
-    "testem":               "~0.7.6"
+    "grunt-sass": "~1.1.0",
+    "load-grunt-tasks": "~0.1.0",
+    "phantomjs": "~1.9.16",
+    "testem": "~0.7.6"
   },
   "scripts": {
     "test": "testem ci",
-    "testem": "testem"
+    "testem": "testem",
+    "webpack": "webpack --config webpack.config.js"
   }
 }

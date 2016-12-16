@@ -1,7 +1,9 @@
+import SpinnerControlsView from "sample_app/spinner_controls_view.js"
+
 describe("Showing the spinner", () => {
 
   it("starts and stops a spinner", () => {
-    var spinnerControls = new SampleApp.SpinnerControlsView({
+    var spinnerControls = new SpinnerControlsView({
       spinnerTarget: $("<div>")
     })
     var spinner = spinnerControls.spinner
@@ -19,7 +21,7 @@ describe("Showing the spinner", () => {
   })
 
   it("starts and stops a spinner on a button", () => {
-    var spinnerControls = new SampleApp.SpinnerControlsView({
+    var spinnerControls = new SpinnerControlsView({
       buttonSpinnerTarget: $("<button>")
     })
     var spinner = spinnerControls.buttonSpinner

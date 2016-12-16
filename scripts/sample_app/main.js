@@ -1,5 +1,7 @@
+import SpinnerControlsView from "sample_app/spinner_controls_view.js"
+
 $(() => {
-  spinnerControls = new SampleApp.SpinnerControlsView({
+  spinnerControls = new SpinnerControlsView({
     buttonSpinnerTarget: $("[data-id=button-spinner-target]"),
     spinnerTarget: $("[data-id=spinner-target]"),
     spinnerConfiguration: DashSpinner.Configuration.large

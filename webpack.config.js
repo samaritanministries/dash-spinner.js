@@ -5,15 +5,8 @@ const PROJECT_ROOT = path.resolve(__dirname)
 
 module.exports = {
   entry: {
-    "dist/dash-spinner.js": [
-      "./bower_components/jquery/dist/jquery.js",
-      "./scripts/dash-spinner/load.js"
-    ],
-    ".tmp/sample_app.js": [
-      "./scripts/namespace.js",
-      "./scripts/sample_app/spinner_controls_view.js",
-      "./scripts/sample_app/main.js"
-    ]
+    "dist/dash-spinner.js": "./scripts/dash-spinner/load.js",
+    ".tmp/sample_app.js": "./scripts/sample_app/main.js"
   },
   output: {
     filename: "[name]"
@@ -47,7 +40,8 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      "dash_spinner": path.join(PROJECT_ROOT, "scripts", "dash-spinner")
+      "dash_spinner": path.join(PROJECT_ROOT, "scripts", "dash-spinner"),
+      "sample_app": path.join(PROJECT_ROOT, "scripts", "sample_app")
     },
     modulesDirectories: [
       path.join(PROJECT_ROOT, "node_modules"),

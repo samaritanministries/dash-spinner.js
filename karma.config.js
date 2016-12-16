@@ -8,8 +8,6 @@ module.exports = function (config) {
     files: [
       "bower_components/jquery/dist/jquery.js",
       "bower_components/jasmine-jquery/lib/jasmine-jquery.js",
-      "scripts/namespace.js",
-      "scripts/sample_app/spinner_controls_view.js",
       "spec/**/*.js"
     ],
     plugins: [

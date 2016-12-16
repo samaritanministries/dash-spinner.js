@@ -1,8 +1,6 @@
 import Backbone from "backbone";
 
-namespace("SampleApp")
-
-class SpinnerControlsView extends Backbone.View {
+export default class extends Backbone.View {
 
   events() {
     return {
@@ -53,5 +51,3 @@ class SpinnerControlsView extends Backbone.View {
   }
 
 }
-
-SampleApp.SpinnerControlsView = SpinnerControlsView

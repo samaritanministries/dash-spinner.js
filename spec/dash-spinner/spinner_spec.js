@@ -1,3 +1,5 @@
+import Spinner from "dash_spinner/spinner.js"
+
 describe("DashSpinner.Spinner", () => {
 
   var target
@@ -7,7 +9,7 @@ describe("DashSpinner.Spinner", () => {
   });
 
   var buildSpinner = (options) => {
-    return new DashSpinner.Spinner({
+    return new Spinner({
       target: options.target,
       spinnerConfiguration: options.spinnerConfiguration
     });

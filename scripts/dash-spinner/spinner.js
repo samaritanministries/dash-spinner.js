@@ -1,6 +1,4 @@
-namespace("DashSpinner")
-
-class Spinner {
+export default class {
 
   constructor(options) {
     this.configuration = options.spinnerConfiguration
@@ -38,4 +36,3 @@ class Spinner {
   }
 
 }
-DashSpinner.Spinner = Spinner

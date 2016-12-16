@@ -7,11 +7,10 @@ module.exports = {
   entry: {
     "dist/dash-spinner.js": [
       "./bower_components/jquery/dist/jquery.js",
-      "./scripts/namespace.js",
-      "./scripts/dash-spinner/configuration.js",
-      "./scripts/dash-spinner/spinner.js"
+      "./scripts/dash-spinner/load.js"
     ],
     ".tmp/sample_app.js": [
+      "./scripts/namespace.js",
       "./scripts/sample_app/spinner_controls_view.js",
       "./scripts/sample_app/main.js"
     ]

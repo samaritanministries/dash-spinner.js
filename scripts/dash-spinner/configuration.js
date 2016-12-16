@@ -1,7 +1,6 @@
-namespace("DashSpinner.Configuration")
-
-DashSpinner.Configuration.small = {
-  className: "small"
+export default {
+  small: {
+    className: "small"
+  },
+  large: {}
 }
-
-DashSpinner.Configuration.large = {}

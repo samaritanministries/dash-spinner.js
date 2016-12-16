@@ -10,12 +10,12 @@ module.exports = {
       "./bower_components/underscore/underscore.js",
       "./bower_components/backbone/backbone.js",
       "./scripts/namespace.js",
-      "./scripts/dash-spinner/configuration.coffee",
-      "./scripts/dash-spinner/spinner.coffee"
+      "./scripts/dash-spinner/configuration.js",
+      "./scripts/dash-spinner/spinner.js"
     ],
     ".tmp/sample_app.js": [
-      "./scripts/sample_app/spinner_controls_view.coffee",
-      "./scripts/sample_app/main.coffee"
+      "./scripts/sample_app/spinner_controls_view.js",
+      "./scripts/sample_app/main.js"
     ]
   },
   output: {

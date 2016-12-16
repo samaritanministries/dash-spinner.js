@@ -11,10 +11,10 @@ module.exports = function (config) {
       "bower_components/backbone/backbone.js",
       "bower_components/jasmine-jquery/lib/jasmine-jquery.js",
       "scripts/namespace.js",
-      "scripts/dash-spinner/configuration.coffee",
-      "scripts/dash-spinner/spinner.coffee",
-      "scripts/sample_app/spinner_controls_view.coffee",
-      "spec/**/*.coffee"
+      "scripts/dash-spinner/configuration.js",
+      "scripts/dash-spinner/spinner.js",
+      "scripts/sample_app/spinner_controls_view.js",
+      "spec/**/*.js"
     ],
     plugins: [
       "karma-jasmine",
@@ -25,9 +25,7 @@ module.exports = function (config) {
     browsers: [ "PhantomJS" ],
     preprocessors: {
       "spec/**/*.js": ["webpack"],
-      "scripts/**/*.js": ["webpack"],
-      "spec/**/*.coffee": ["webpack"],
-      "scripts/**/*.coffee": ["webpack"]
+      "scripts/**/*.js": ["webpack"]
     },
     logLevel: config.LOG_INFO,
     reporters: ["spec"],

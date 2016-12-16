@@ -12,23 +12,14 @@ module.exports = {
     filename: "[name]"
   },
   module: {
-    loaders:[
-      {
-        include: [
-          path.join(PROJECT_ROOT, "scripts"),
-          path.join(PROJECT_ROOT, "spec")
-        ],
-        loader: "babel-loader",
-        test: /\.js$/
-      }, {
-        include: [
-          path.join(PROJECT_ROOT, "scripts"),
-          path.join(PROJECT_ROOT, "spec")
-        ],
-        loader: "babel!coffee",
-        test: /\.coffee$/
-      }
-    ]
+    loaders:[{
+      include: [
+        path.join(PROJECT_ROOT, "scripts"),
+        path.join(PROJECT_ROOT, "spec")
+      ],
+      loader: "babel-loader",
+      test: /\.js$/
+    }]
   },
   plugins: [
     new webpack.ProvidePlugin({

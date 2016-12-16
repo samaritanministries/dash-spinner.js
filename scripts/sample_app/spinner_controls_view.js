@@ -1,3 +1,5 @@
+import Backbone from "backbone";
+
 namespace("SampleApp")
 
 class SpinnerControlsView extends Backbone.View {

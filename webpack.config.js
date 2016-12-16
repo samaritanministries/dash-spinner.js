@@ -7,8 +7,6 @@ module.exports = {
   entry: {
     "dist/dash-spinner.js": [
       "./bower_components/jquery/dist/jquery.js",
-      "./bower_components/underscore/underscore.js",
-      "./bower_components/backbone/backbone.js",
       "./scripts/namespace.js",
       "./scripts/dash-spinner/configuration.js",
       "./scripts/dash-spinner/spinner.js"

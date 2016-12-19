@@ -1,6 +1,6 @@
 {
   "name": "dash-spinner.js",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "dependencies": {},
   "devDependencies": {
     "backbone": "~1.2.3",

@@ -1,9 +1,12 @@
-describe "Showing the spinner", ->
+import SpinnerControlsView from "sample_app/spinner_controls_view.js"
 
-  it "starts and stops a spinner", ->
-    spinnerControls = new SampleApp.SpinnerControlsView
+describe("Showing the spinner", () => {
+
+  it("starts and stops a spinner", () => {
+    var spinnerControls = new SpinnerControlsView({
       spinnerTarget: $("<div>")
-    spinner = spinnerControls.spinner
+    })
+    var spinner = spinnerControls.spinner
     spinnerControls.render()
 
     expect(spinner.isSpinning()).toBeFalsy()
@@ -15,11 +18,13 @@ describe "Showing the spinner", ->
     spinnerControls.stopSpinner()
 
     expect(spinner.isSpinning()).toBeFalsy()
+  })
 
-  it "starts and stops a spinner on a button", ->
-    spinnerControls = new SampleApp.SpinnerControlsView
+  it("starts and stops a spinner on a button", () => {
+    var spinnerControls = new SpinnerControlsView({
       buttonSpinnerTarget: $("<button>")
-    spinner = spinnerControls.buttonSpinner
+    })
+    var spinner = spinnerControls.buttonSpinner
     spinnerControls.render()
 
     expect(spinner.isSpinning()).toBeFalsy()
@@ -31,3 +36,6 @@ describe "Showing the spinner", ->
     spinnerControls.$("[data-action=stop-button-spinner]").click()
 
     expect(spinner.isSpinning()).toBeFalsy()
+  })
+
+})

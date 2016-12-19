@@ -4,15 +4,9 @@
 
 This is a JavaScript library that provides a CSS based spinner. It also provides default configurations for the Dash platform.
 
-## Browser Support
+Dash Spinner has been converted to use ES6 and Webpack, however it is still being shipped with a bundled Javascript file for use with pre-ES6 applications. Instructions for both are included.
 
-| Chrome | Edge | Firefox | Opera | IE | Safari |
-|--------|------|---------|-------|----|--------|
-| Latest | Latest | Latest | Latest | IE 11+ | Safari 8+ |
-
-## Getting Started
-
-### Install the Component
+## Installation
 
 Dash-Spinner.js is delivered as a [bower](bower.io) component.
 
@@ -33,16 +27,29 @@ Dash-Spinner.js is delivered as a [bower](bower.io) component.
   bower install dash-spinner.js --save
   ```
 
-#### Including JavaScript in your project
+## Usage
 
-Please refer to our [documentation site](http://developers.samaritanministries.org/developers/dash-spinner.js/) for details on component configuration.
+### ES5
 
+1. Add `<script src="path/to/dash_spinner/dist/dash-spinner.js"></script>` to your index.
+2. `new DashSpinner.Spinner(options).spin()`
 
-## Contribution
+### ES6
 
-Feel free to add to this component and make it better. We're always looking for improvements.
+```
+import DashSpinner from "dash_spinner/spinner.js"
+new DashSpinner(options).spin()
+```
 
-### Setup
+### Browser Support
+
+| Chrome | Edge | Firefox | Opera | IE | Safari |
+|--------|------|---------|-------|----|--------|
+| Latest | Latest | Latest | Latest | IE 11+ | Safari 8+ |
+
+## Project Setup
+
+### Dependencies
 
 1. Install node.js and NPM
 
@@ -60,12 +67,24 @@ Feel free to add to this component and make it better. We're always looking for 
   bower install
   ```
 
-### Tests
+### Running the Tests
 
-Make sure that you have testem installed globally. When you're ready to run tests, open up your project and run:
+For a single run of the tests:
+`npm test`
 
-```bash
-npm run testem
-```
+To run the tests with a watcher:
+`npm run karma`
 
-MIT License
+### Running the Demo
+
+1. `npm run webpack`
+2. `open app/index.html`
+
+## Releasing a New Version
+
+1. Commit your changes
+2. Run `./bower_deploy.sh`
+
+## License
+
+[MIT License](LICENSE.md)

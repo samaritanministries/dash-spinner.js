@@ -6,7 +6,7 @@ const PROJECT_ROOT = path.resolve(__dirname);
 module.exports = {
   entry: {
     "dist/dash-spinner.js": "./scripts/dash_spinner/load.js",
-    ".tmp/sample-app.js": "./scripts/sample_app/main.js"
+    ".tmp/sample_app.js": "./scripts/sample_app/main.js"
   },
   output: {
     filename: "[name]"
